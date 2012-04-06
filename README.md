@@ -2,7 +2,7 @@
 jQuery ImagePreview
 ===
 
-jQuery ImagePreview provides local preview methods, support IE6-8£¬Firefox£¬Chrome£¬Opera.
+jQuery ImagePreview provides local preview methods, support IE6-8, Firefox, Chrome, Opera.
 
 ## License
 
