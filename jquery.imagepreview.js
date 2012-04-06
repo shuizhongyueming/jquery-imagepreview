@@ -105,6 +105,9 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 				oFReader.onload = function (oFREvent) {
 					fn(oFREvent.target.result);
 				};
+				oFReader.onerror = function(a) {
+					fn(options.okImg);
+				};
 				oFReader.readAsDataURL(oFile);
 			} catch(e) {
 				fn(options.okImg);
