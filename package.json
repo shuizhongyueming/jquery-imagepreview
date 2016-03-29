@@ -1,0 +1,24 @@
+{
+  "name": "jquery-imagepreview",
+  "version": "1.0.0",
+  "description": "基于jquery实现的本地图片预览功能",
+  "main": "jquery.imagepreview.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shuizhongyueming/jquery-imagepreview.git"
+  },
+  "keywords": [
+    "jquery",
+    "image",
+    "preview"
+  ],
+  "author": "cnhaixiang@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shuizhongyueming/jquery-imagepreview/issues"
+  },
+  "homepage": "https://github.com/shuizhongyueming/jquery-imagepreview#readme"
+}
