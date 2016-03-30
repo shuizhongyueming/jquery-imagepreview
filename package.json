@@ -1,6 +1,6 @@
 {
   "name": "jquery-imagepreview",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "基于jquery实现的本地图片预览功能",
   "main": "jquery.imagepreview.js",
   "scripts": {
