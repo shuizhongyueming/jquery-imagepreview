@@ -44,7 +44,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 		options = $.extend(defaults, options);
 
 		var file = $(options.file)[0],
-			img = $(options.img)[0],
+			img = $(options.img),
 			preloadImg = $('<img style="position:absolute;top:-9999px;left:-9999px;visibility:hidden;" />').appendTo(document.body)[0],
 			blankSrc = $.browser.msie && $.browser.version <= 7 ?
 				basePath + 'images/blank.gif' :
@@ -55,9 +55,11 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 				Math.max(0, options.maxWidth) / width || 1,
 				Math.max(0, options.maxHeight) / height || 1
 			);
-			img.style.width = Math.round(width * ratio) + 'px';
-			img.style.height = Math.round(height * ratio) + 'px';
-			img.src = src;
+            $.each(img, function(i, n){
+                n.style.width = Math.round(width * ratio) + 'px';
+                n.style.height = Math.round(height * ratio) + 'px';
+                n.src = src;
+            });
 		}
 		// get image size and show image
 		function preload(src) {
@@ -65,7 +67,9 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 				preloadImg.src = blankSrc;
 				preloadImg.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='image',src=\"" + src + "\")";
 				showImg(blankSrc, preloadImg.offsetWidth, preloadImg.offsetHeight);
-				img.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale',src=\"" + src + "\")";
+                $.each(img, function(i, n){
+                    n.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale',src=\"" + src + "\")";
+                });
 			} else {
 				preloadImg.onload = function() {
 					showImg(src, this.width, this.height);
